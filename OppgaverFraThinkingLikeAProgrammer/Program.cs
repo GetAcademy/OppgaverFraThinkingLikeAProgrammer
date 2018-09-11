@@ -21,11 +21,16 @@ namespace OppgaverFraThinkingLikeAProgrammer
 
         private static void ShowStarRow(int row)
         {
-            for (int i = 1; i <= row - 1; i++) Console.Write(" ");
-            for (int i = 1; i <= row; i++) Console.Write("#");
-            for (int i = 1; i <= 16 - row * 4; i++) Console.Write(" ");
-            for (int i = 1; i <= row; i++) Console.Write("#");
+            ShowCountOfCharacter(row - 1, " ");
+            ShowCountOfCharacter(row, "#");
+            ShowCountOfCharacter(16 - row * 4, " ");
+            ShowCountOfCharacter(row, "#");
             Console.Write("\n");
+        }
+
+        private static void ShowCountOfCharacter(int count, string character)
+        {
+            for (int i = 1; i <= count; i++) Console.Write(character);
         }
 
         private static void Exercise2_1()
