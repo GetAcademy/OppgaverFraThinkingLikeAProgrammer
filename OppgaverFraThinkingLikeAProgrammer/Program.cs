@@ -19,16 +19,19 @@ namespace OppgaverFraThinkingLikeAProgrammer
             var line = Console.ReadLine() + " ";
             var wordCount = 0;
             var charsInCurrentWord = 0;
-            for (var i = 0; i < line.Length; i++)
+            foreach (var character in line)
             {
-                var isSpace = line[i] == ' ';
-                if (charsInCurrentWord == 0 && !isSpace) wordCount++;
+                var isSpace = character == ' ';
                 if (isSpace)
                 {
                     Console.WriteLine("ordlengde = " + charsInCurrentWord);
                     charsInCurrentWord = 0;
                 }
-                else charsInCurrentWord++;
+                else
+                {
+                    if (charsInCurrentWord == 0 ) wordCount++;
+                    charsInCurrentWord++;
+                }
             }
         }
 
