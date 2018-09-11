@@ -10,8 +10,44 @@ namespace OppgaverFraThinkingLikeAProgrammer
     {
         static void Main(string[] args)
         {
-            Exercise2_3();
+            Exercise2_9();
         }
+
+        private static void Exercise2_9()
+        {
+            Console.Write("Skriv inn tekst: ");
+            var line = Console.ReadLine() + " ";
+            var wordCount = 0;
+            var charsInCurrentWord = 0;
+            for (var i = 0; i < line.Length; i++)
+            {
+                var isSpace = line[i] == ' ';
+                if (charsInCurrentWord == 0 && !isSpace) wordCount++;
+                if (isSpace)
+                {
+                    Console.WriteLine("ordlengde = " + charsInCurrentWord);
+                    charsInCurrentWord = 0;
+                }
+                else charsInCurrentWord++;
+            }
+        }
+
+        // Kun telle ord
+        //private static void Exercise2_9()
+        //{
+        //    Console.Write("Skriv inn tekst: ");
+        //    var line = Console.ReadLine();
+        //    var wordCount = 0;
+        //    var isInsideWord = false;
+        //    for (var i = 0; i < line.Length; i++)
+        //    {
+        //        var isSpace = line[i] == ' ';
+        //        if (!isInsideWord && !isSpace) wordCount++;
+        //        isInsideWord = !isSpace;
+        //    }
+
+        //    Console.WriteLine(wordCount + " ord");
+        //}
 
         private static void Exercise2_3()
         {
